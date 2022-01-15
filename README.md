@@ -10,3 +10,4 @@ The steps of the algorithm is as follows:
 1. We preprocessed the image by segmenting it into Superpixels. For a 300 x 400 images we segmented it into three scales (150, 250, 350).
 2. From the obtained Superpixels we extracted the boundary Superpixels, and trained a VAE using the superpixels. The parameters of the VAE framework is as shown in the image.
 3. While training the VAE we incorporate a perceptual loss along with the KL-divergence and reconstruction loss. The main idea is to seek consistency between hidden representation of two images (original and generated). We replaced the generated Superpixel into the corresponding slot in the image and fed the original image and obtained image to a VGG19 net and measured the losses from the feature-maps. This actually takes into consideration the dependecy of the Superpixels.
+![alt text](https://github.com/uddaloksarkar/SuperVAE/blob/master/framework.png)
